@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>触屏滑动轮播效果代码</title>
+		<script>
+			onresize = function() {
+				document.documentElement.style.fontSize = innerWidth / 3.75 + 'px';
+			}
+			document.documentElement.style.fontSize = innerWidth / 3.75 + 'px';
+		</script>
+		<link rel="stylesheet" href="swiper-3.4.2.min.css" />
+		<style>
+			.box {
+				width: 100%;
+				height: 30vh;
+				background: #ccc;
+				position: absolute;
+				top:0;
+				left:0;
+				z-index: 0;
+			}
+			.swiper-container {
+			    width: 600px;
+			    height: 300px;
+			    position: absolute;
+			    top:0;
+			    left:0;
+			    z-index: -1;
+			}  
+		</style>
+		<script src="jquery.min.js"></script>
+		<script src="swiper-3.4.2.jquery.min.js"></script>
+	</head>
+
+	<body>
+		<!--触摸滑动-->
+		<div class="box" id="box">
+			<input type="button" id="btn" value="点击出现"/>
+		</div>
+		<div class="swiper-container">
+		    <div class="swiper-wrapper">
+		        <img class="swiper-slide" src="img/img_main_1.jpg" alt="" />
+		        <img class="swiper-slide" src="img/img_main_2.jpg" alt="" />
+		        <img class="swiper-slide" src="img/img_main_3.jpg" alt="" />
+		    </div>
+		</div>
+
+		<!--js-->
+		<script type="text/javascript">
+			$(function(){
+				var mySwiper = new Swiper ('.swiper-container',{
+					loop:true
+				})
+				$("#box").on("click",function (e) {
+//					e.stopPropagation();
+					$(".swiper-container").css("z-index","99");
+					$(".swiper-container").on("click",function (e) {
+//						e.stopPropagation();
+						$(this).css("z-index","-1");
+					})
+				})
+			})
+		</script>
+	</body>
+
+</html>
