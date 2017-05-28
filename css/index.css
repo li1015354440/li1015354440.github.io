@@ -1,0 +1,62 @@
+body {
+  background: #eee;
+}
+.header {
+  width: 100%;
+  height: 5vh;
+  background: rgba(0, 0, 0, 0.5);
+}
+.container {
+  margin: 0 auto;
+  width: 990px;
+  display: -webkit-flex;
+  /* Safari */
+  display: flex;
+  justify-content: space-between;
+}
+.container .left-column {
+  flex: 1;
+  height: 90vh;
+  margin-right: 10px;
+  background: #ddd;
+}
+.container .left-column .personal-data {
+  box-sizing: border-box;
+  padding: 2vh;
+  height: 24vh;
+}
+.container .left-column .personal-data img {
+  float: left;
+  margin-right: 2vh;
+}
+.container .left-column .personal-data p {
+  float: left;
+  min-width: 50%;
+  margin-top: 1.5vh;
+  line-height: 2vh;
+}
+.container .left-column .song-list {
+  padding: 2vh;
+}
+.container .left-column .song-list li {
+  height: 5vh;
+  line-height: 5vh;
+  padding-left: 1vh;
+}
+.container .left-column .song-list li:not(:last-child) {
+  border-bottom: 1px solid #aaa;
+}
+.container .right-column {
+  flex: 2;
+  height: 90vh;
+  background: #ccc;
+}
+.container .right-column .banner {
+  height: 27vh;
+  background: #aaa;
+}
+.footer {
+  width: 100%;
+  height: 5vh;
+  background: rgba(0, 0, 0, 0.5);
+}
